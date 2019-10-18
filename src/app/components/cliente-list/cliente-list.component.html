@@ -1,0 +1,19 @@
+<div class="col-md-4" *ngFor="let cliente of clientes">
+    <div class="card text-center">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+            
+            <button class="btn btn-danger" (click)="deleteCliente(cliente.clienteid)">
+                <i class="far fa-trash-alt"></i>
+            </button>
+        </div>
+        <div class="card-body">
+            <p>{{cliente.nombre}}</p>
+            <p>{{cliente.apellido}}</p>
+            <p>{{cliente.telefono}}</p>
+            <p>{{cliente.direccion}}</p>
+            <a [routerLink]="['/clientes/edit',cliente.clienteid]" class="btn btn-info btb-block">
+                Editar Cliente 
+            </a>
+        </div>
+    </div>
+</div>
